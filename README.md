@@ -114,5 +114,6 @@ Example:
 ```json
 { "verdict": "FALSE_GREEN", "signals": ["MISSING_ARTIFACT", "IGNORED_ERROR"] }
 
-<img width="771" height="374" alt="Screenshot 2025-12-23 at 3 03 34 PM" src="https://github.com/user-attachments/assets/4c08c579-6e08-486c-96c2-cee278907218" />
+---
+<img width="771" height="374" alt="Screenshot 2025-12-23 at 3 03 34 PM" src="https://github.com/user-attachments/assets/a3a24b16-62da-41b0-8842-ed40af310458" />
 
