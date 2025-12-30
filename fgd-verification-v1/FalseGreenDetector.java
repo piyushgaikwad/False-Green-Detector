@@ -18,7 +18,8 @@ public class FalseGreenDetector {
     private static final int EXIT_FALSE_GREEN = 2;
     private static final int EXIT_FGD_ERROR  = 3;
 
-    // Signals (FGD ruleset)
+    // Signals
+    // (FGD ruleset)
     private static final String MISSING_ARTIFACT      = "MISSING_ARTIFACT";
     private static final String CORRUPT_TEST_REPORT   = "CORRUPT_TEST_REPORT";
     private static final String TESTS_NOT_EXECUTED    = "TESTS_NOT_EXECUTED";
@@ -71,7 +72,8 @@ public class FalseGreenDetector {
             // Only run deeper checks if required artifacts seem present
             boolean hasMissing = signals.contains(MISSING_ARTIFACT);
 
-            // 2) Evidence integrity + 3) tests executed (JUnit XML)
+            // 2) Evidence integrity + 
+            // 3) tests executed (JUnit XML)
             if (!hasMissing) {
                 Path junit = Paths.get(artifactsDir, "test_report.xml");
                 if (Files.exists(junit)) {
