@@ -164,7 +164,7 @@ public class FalseGreenDetector {
             }
 
         } catch (Exception e) {
-            // Tool-level failure
+            // Tool-level failure.
             String err = "{"
                     + "\"verdict\":\"FGD_ERROR\","
                     + "\"signals\":[\"FGD_ERROR\"],"
