@@ -24,46 +24,50 @@ pipeline {
     }
 
     stage('GitHub githubApp') {
-      withCredentials([usernamePassword(
-        credentialsId: 'githubapp-jenkins',
-        usernameVariable: 'U',
-        passwordVariable: 'GH_TOKEN'
-      )]) {
-        sh '''
-          set -euo pipefail
-          umask 077
-          TOKEN_FILE=$(mktemp)
-      
-          # write token to file (no printing)
-          printf "%s" "$GH_TOKEN" > "$TOKEN_FILE"
-      
-          echo "Token saved to: $TOKEN_FILE"
-          echo "Now you can open it locally on the Jenkins machine if you really need."
-          # cleanup
-          rm -f "$TOKEN_FILE"
-        '''
+      steps {
+        withCredentials([usernamePassword(
+          credentialsId: 'githubapp-jenkins',
+          usernameVariable: 'U',
+          passwordVariable: 'GH_TOKEN'
+        )]) {
+          sh '''
+            set -euo pipefail
+            umask 077
+            TOKEN_FILE=$(mktemp)
+        
+            # write token to file (no printing)
+            printf "%s" "$GH_TOKEN" > "$TOKEN_FILE"
+        
+            echo "Token saved to: $TOKEN_FILE"
+            echo "Now you can open it locally on the Jenkins machine if you really need."
+            # cleanup
+            rm -f "$TOKEN_FILE"
+          '''
+        }
       }
     }
 
     stage('GitHub githubApp1') {
-      withCredentials([usernamePassword(
-        credentialsId: 'githubapp-jenkins',
-        usernameVariable: 'U',
-        passwordVariable: 'GH_TOKEN'
-      )]) {
-        sh '''
-          set -euo pipefail
-          umask 077
-          TOKEN_FILE1=$(mktemp)
-      
-          # write token to file (no printing)
-          printf "%s" "$GH_TOKEN" > "$TOKEN_FILE1"
-      
-          echo "Token saved to: $TOKEN_FILE1"
-          echo "Now you can open it locally on the Jenkins machine if you really need."
-          # cleanup
-          rm -f "$TOKEN_FILE1"
-        '''
+      steps {
+        withCredentials([usernamePassword(
+          credentialsId: 'githubapp-jenkins',
+          usernameVariable: 'U',
+          passwordVariable: 'GH_TOKEN'
+        )]) {
+          sh '''
+            set -euo pipefail
+            umask 077
+            TOKEN_FILE1=$(mktemp)
+        
+            # write token to file (no printing)
+            printf "%s" "$GH_TOKEN" > "$TOKEN_FILE1"
+        
+            echo "Token saved to: $TOKEN_FILE1"
+            echo "Now you can open it locally on the Jenkins machine if you really need."
+            # cleanup
+            rm -f "$TOKEN_FILE1"
+          '''
+        }
       }
     }
 
