@@ -7,7 +7,7 @@ pipeline {
           def fp1 = ''
           def fp2 = ''
 
-          withCredentials([usernamePassword(credentialsId: 'Checker1',
+          withCredentials([usernamePassword(credentialsId: 'GithubApp',
             usernameVariable: 'USER', passwordVariable: 'GH_TOKEN')]) {
 
             fp1 = sh(returnStdout: true, script: '''
@@ -18,7 +18,7 @@ pipeline {
           // small delay (optional)
           sleep 2
 
-          withCredentials([usernamePassword(credentialsId: 'Checker1',
+          withCredentials([usernamePassword(credentialsId: 'GithubApp',
             usernameVariable: 'USER', passwordVariable: 'GH_TOKEN')]) {
 
             fp2 = sh(returnStdout: true, script: '''
